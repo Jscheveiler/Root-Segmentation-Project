@@ -20,7 +20,7 @@ All convolutional blocks are residual to improve gradient flow and convergence s
 
 #### Squeeze-And-Excitation (SE) Blocks
 Added to encoder and decoder blocks to enable dynamic channel-wise attention, allowing the network to emphasize informative features.
- - The implemented SE Blocks are as described by [J. Hu et al., 2019](https://arxiv.org/abs/1709.01507)
+ - The implemented SE Blocks are as described by [Hu et al., 2019](https://arxiv.org/abs/1709.01507)
 
 #### ASPP Bottleneck
 The bottleneck is replaced by an ASPP block to enhance multi-scale feature extraction.
