@@ -3,7 +3,7 @@ import torch.nn as nn
 
 class SEBlock(nn.Module):
     """
-    Squeeze-and-Excitation block as defined by J. Hu et al. in https://arxiv.org/abs/1709.01507
+    Squeeze-and-Excitation block as defined by Hu et al. in https://arxiv.org/abs/1709.01507
     reduction is set at 16 by default, matching the publication.
     """
     def __init__(self, channels, reduction=16):
