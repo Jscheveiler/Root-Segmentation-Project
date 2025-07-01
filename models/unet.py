@@ -1,3 +1,7 @@
+"""
+This file contains a modified U-Net network which implements Residual blocks with SE blocks, and an ASPP block as the bottleneck.
+It also uses group normalization instead of Batch Normalization.
+"""
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
