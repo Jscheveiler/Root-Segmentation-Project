@@ -1,8 +1,3 @@
-# Use dilation = 1,2,4,6, or 1,3,5,7
-# It's in the bottleneck, so the dimensions are H/16, W/16, C=1024.
-# The base values were going up to 18, but 3+(2*17) = 37x37 which is way too big, it's more than 100% of the feature map
-# So we reduce the dilations.
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
