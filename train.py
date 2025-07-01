@@ -47,7 +47,7 @@ def train(args):
     optimizer = optim.Adam(model.parameters(), lr=args.lr, weight_decay=1e-5)
 
     # Learning rate scheduler
-    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=20, verbose=True)
+    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=20)
 
     # Training loop
     best_dice = 0.0
