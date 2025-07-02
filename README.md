@@ -42,7 +42,7 @@ Multiple arguments are callable :
   - \-\-epochs sets the number of training epochs. (default=100)
   - \-\-lr controls the learning rate. (default=1e-4)
   - \-\-num\_workers sets the number of data loading workers. (default=2)
-  - \-\-save_freq sets the frequency at which checkpoints are saved. (default=33)
+  - \-\-save_freq sets the frequency at which checkpoints are saved. (default=100)
     
 ### Validation
 Validation can be used with the following command : 
