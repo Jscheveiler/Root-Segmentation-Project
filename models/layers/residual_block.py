@@ -19,7 +19,7 @@ class ResidualDoubleConv(nn.Module):
         -> ReLU activation
         -> The whole block is a residual block.
     """
-    def __init__(self, in_channels, out_channels, groups=8):
+    def __init__(self, in_channels, out_channels, groups=8, up=False):
         super().__init__()
 
         self.conv_block = nn .Sequential(
@@ -30,7 +30,8 @@ class ResidualDoubleConv(nn.Module):
             nn.GroupNorm(groups, out_channels)
         )
 
-        self.se = SEBlock(out_channels)
+        if not up:
+            self.se = SEBlock(out_channels)
         self.relu = nn.ReLU(inplace=True)
 
         # Residual needs C_in and C_out to be equal, because it won't be possible to merge the Identity with the Output
@@ -43,6 +44,7 @@ class ResidualDoubleConv(nn.Module):
         residual = self.residual(x)  # Define our identity and make it match output dim if needed
 
         out = self.conv_block(x)
-        out = self.se(out)
+        if not up:
+            out = self.se(out)
 
         return self.relu(out + residual)
